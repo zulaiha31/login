@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Sederhana</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .login-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { display: block; margin: 10px 0; width: 100%; padding: 8px; }
+    button { padding: 10px; width: 100%; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button onclick="login()">Login</button>
+  <p id="error" class="error"></p>
+</div>
+
+<script>
+const accounts = [
+  { username: "user1", password: "pass1" },
+  { username: "user2", password: "pass2" },
+  { username: "user3", password: "pass3" },
+  { username: "user4", password: "pass4" },
+  { username: "user5", password: "pass5" },
+  { username: "user6", password: "pass6" },
+  { username: "user7", password: "pass7" },
+  { username: "user8", password: "pass8" },
+  { username: "user9", password: "pass9" },
+  { username: "user10", password: "pass10" },
+  { username: "user11", password: "pass11" },
+  { username: "user12", password: "pass12" },
+  { username: "user13", password: "pass13" },
+  { username: "user14", password: "pass14" },
+  { username: "user15", password: "pass15" },
+  { username: "user16", password: "pass16" },
+  { username: "user17", password: "pass17" },
+  { username: "user18", password: "pass18" },
+  { username: "user19", password: "pass19" },
+  { username: "user20", password: "pass20" },
+  { username: "user21", password: "pass21" },
+  { username: "user22", password: "pass22" },
+  { username: "user23", password: "pass23" },
+  { username: "user24", password: "pass24" },
+  { username: "user25", password: "pass25" },
+  { username: "user26", password: "pass26" },
+  { username: "user27", password: "pass27" },
+  { username: "user28", password: "pass28" },
+  { username: "user29", password: "pass29" },
+  { username: "user30", password: "pass30" },
+];
+
+function login() {
+  const usernameInput = document.getElementById("username").value.trim();
+  const passwordInput = document.getElementById("password").value.trim();
+  const errorText = document.getElementById("error");
+
+  const found = accounts.find(acc => acc.username === usernameInput && acc.password === passwordInput);
+
+  if (found) {
+    window.location.href = "home.html";
+  } else {
+    errorText.textContent = "Username atau password salah!";
+  }
+}
+</script>
+
+</body>
+</html>
